@@ -1,0 +1,8 @@
+- name: install prereqs
+  yum: name={{item}} state=present
+  with_items:
+    - git
+    - python34
+
+- name: get pip
+  shell: curl https://bootstrap.pypa.io/get-pip.py | python3.4
